@@ -1,0 +1,129 @@
+ body {
+    background-color: rgb(226, 224, 224);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section {
+    width: 60%;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 120px;
+}
+
+footer {
+    text-align: right;
+}
+
+a{
+    color: blue;
+    text-decoration-line: none;
+}
+
+a:hover {
+    color: green;
+}
+
+a:active {
+    color: rgb(141, 102, 28);;
+}
+
+aside {
+    width: 18%;
+    background-color: #bbb;
+    position: fixed;
+    display: block;
+    left: 80%;
+    bottom: 20%;
+    border: 1px solid rgb(61, 61, 61);
+    border-radius: 20px;
+    padding: .5%;
+    overflow: hidden;
+}
+
+aside *{
+    background-color: #bbb;
+    list-style-type: disc;
+}
+
+main li:nth-child(2n){
+    margin-left: 19px;
+    list-style-type: circle;
+}
+
+#upper {
+    color: rgb(194, 140, 41);
+}
+
+#upper:hover{
+    color: green;
+}
+
+header {   
+    margin: 0 auto 60px auto;
+    width: 95%;
+    height: 60px;
+    background-color: rgb(62, 62, 68);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+header li{     
+    float: left;
+    list-style-type: none;
+    margin: 18px 15px;
+}
+
+header li a {        
+    color: white;
+    font-size: 18px;
+}
+
+header li a:hover{
+    color: orange;
+    text-decoration-line: underline;
+}
+
+header li a:active {
+    color: orangered;
+
+}
+
+footer {
+    background: rgb(62, 62, 68);
+    margin: 20px auto 0 auto;
+    line-height: 25px;
+    padding: 1%;
+    align-content: center;
+}
+
+footer li{
+    list-style-type: none;
+    display: inline;
+}
+
+footer li a {
+    color: white;
+    margin: 0 20px;
+}
+
+footer p{
+    color: whitesmoke;
+    float: left;
+}
+
+footer > a{
+    float: left;
+    margin: 15px 20px auto auto;
+}
+
+img {
+    width: 32px;
+    height: 32px;
+}
+
+header > a {
+    float: left;
+}

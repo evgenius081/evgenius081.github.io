@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Tahoma', 'segoe ul',  sans-serif;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+body > header{
+    background: url(img/headerbg.png) top center / cover no-repeat;
+    position: relative;
+}
+
+body > header::after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #0c0623;
+    opacity: 0.5;
+}
+
+body > header *{
+    z-index: 2;
+}
+
+.main_block{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 105px;
+    padding-right: 105px;
+/*    z-index: 1;*/
+}
+
+.header_top{
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 120px;
+}
+
+.menu{
+display: flex;
+}
+
+.menu > li{
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.menu > li:hover{
+    background: #5dbbc1; 
+}
+
+.header_bot{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.site_main_text{
+    flex-basis: 465px;
+}
+
+.site_main_text h1{
+    font-size: 90px;
+    font-weight: lighter;
+    color: #fff;
+    padding-bottom: 51px;
+}
+
+.site_main_text h1 span{
+    color: #5dbbc1;
+}
+
+.site_main_text p{
+    color: white;
+    font-size: 20px;
+}
+
+.form_wrapper{
+    flex-basis: 400px;
+    margin-bottom: -120px;
+}
+
+.form_wrapper form{
+    width: 100%;
+    background:  #5dbbc1;
+    text-align: center;
+    border-radius: 6px;
+    padding: 33px 25px;
+}
+
+.form_wrapper form h3{
+    font-size: 22px;
+    color: #fff;
+    font-weight: 500;
+    padding-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.form_wrapper form > input{
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    padding: 20px;
+    color: #2d2d2d;
+}
+
+.form_wrapper form > input::placeholder{
+    color: rgba(0,0,0,0.3);
+}
+
+.form_wrapper label{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form_wrapper label input{
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.form_wrapper label div{
+    display: inline-block;
+    width:20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+.form_wrapper label input:checked + div:after{
+    display: block;
+    content: "";
+    width: 10px;
+    height: 5px;
+    border: 3px solid #2d2d2d;
+    position: absolute;
+    border-top: none;
+    border-right:none;
+    transform: rotate(-45deg);
+    left: 4px;
+    top: 4px;
+}
+
+.form_wrapper label span{
+    font-size: 20px;
+    color: #fff;
+}
+
+.form_wrapper form input[type="submit"]{
+    color: #fff;
+    background: #130e37;
+    padding: 20px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.form_wrapper form input[type="submit"]:hover{
+    background: #40395a;
+}

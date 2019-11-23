@@ -7,6 +7,10 @@
     font-size: 18px;
 }
 
+body{
+    min-width: 414px;
+}
+
 a{
     color: #000000;
 }
@@ -218,6 +222,7 @@ main h2{
 
 #solutions h2{
     margin-bottom: 21px;
+    text-align: center;
 }
 
 #solution-wrapper{
@@ -308,7 +313,7 @@ main h2{
     display: block;
     content: "";
     position: absolute;
-    left: 31px;
+    left: 32px;
     top: -22px;
     border-bottom: 22px solid #ffd200;
     border-right: 22px solid transparent;
@@ -319,7 +324,7 @@ main h2{
 #best-text{
     text-transform: uppercase;
     position: absolute;
-    left: 92px;
+    left: 96px;
     top: -13px;
     color: #e11a27;
     font-size: 18px;
@@ -582,6 +587,10 @@ footer{
     }
 
     @media screen and (max-width: 580px){        
+        #list2{
+            display: none;
+        }
+        
         #chain{
             flex-direction: column;
         }
@@ -615,5 +624,20 @@ footer{
         #john-card{
             margin-left: 0%;
         }
+    }
+
+    @media screen and (max-width: 935px){
+        .odd-button{
+            background: #fff;
+            color: #000;
+        }
+
+        #header-bot{
+            padding-bottom: 150px;
+        }
+
+        .odd-button:hover{
+            background: #000;
+            color: #fff;
         }
     }

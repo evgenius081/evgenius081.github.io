@@ -83,6 +83,7 @@ h2{
     padding: 20px 32px;
     text-transform: uppercase;
     transition: all 0.4s ease;
+    cursor: pointer;
 }
 
 .odd-button:hover{
@@ -197,11 +198,14 @@ main h2{
     margin-top: 86px;
     border-radius: 8px;
     transition: all 0.4s ease;
+    border: 1px solid #fff;
+    cursor: pointer;
 }
 
 .even-button:hover{
     background: #fff;
     color: #e11a27;
+    border: 1px solid #e11a27;
 }
 
 #solutions{
@@ -367,6 +371,10 @@ main h2{
     left: 65%;
 }
 
+#person-text a:hover{
+    color: #e11a27;
+}
+
 #person-text a img{
     padding-bottom: 4px;
 }
@@ -444,25 +452,26 @@ footer{
     padding: 52px 0px 59px 0px;
 }
 
-#footer-wrapper:nth-child(4) {
-    align-self: flex-end;
-    justify-self: flex-end;
-}
-
 .footer-list{
     border-top: 2px solid #000000;
     padding-top: 30px;
-    margin-right: 7%;
     width: 154px;
     text-align: left;
+    margin-right: 7%;
 }
 
 .footer-list li{
     line-height: 36px;
 }
 
+#list3{
+    margin: 0%;
+}
+
 #soc-net{
     margin-right: 0px;
+    margin-left: 28%;
+    justify-self: flex-end;
 }
 
 #social-wrapper{
@@ -500,7 +509,7 @@ footer{
 #inst{
     width: 24px;
     height: 24px;
-    margin-right: 20px; 
+    margin-right: 42px; 
     background: url(img/instagram.png);
 }
 
@@ -528,3 +537,83 @@ footer{
     width: 55px;
     height: 48px;
 }
+
+@media screen and (max-width: 800px){
+    #phone{
+        display: none;
+    }
+
+    #login{
+        display: none;
+    }
+
+    #logo{
+        padding-right: 0px;
+        margin: 0 auto;
+    }
+    
+    #footer-list{
+        margin: 0 auto;
+    }
+
+    #footer-wrapper{
+        justify-content: center;
+    }
+
+    #soc-net{
+        margin: 0 auto;
+    }
+    }
+
+    @media screen and (max-width: 1012px){
+        #soc-net{
+            margin-left: 7%;
+        }
+    }
+
+    @media screen and (max-width: 752px){
+        #list3{
+            display: none;
+        }
+        #testimonial{
+            background: none;
+            background: #f7f0e6;
+        }
+    }
+
+    @media screen and (max-width: 580px){        
+        #chain{
+            flex-direction: column;
+        }
+
+        .step-wrapper{
+            display: flex;
+            align-items: center;
+        }
+
+        .step-wrapper p{
+            margin-left: 20px;
+        }
+
+        .devider-line{
+            border-top: none;
+            border-left:  5px dashed #ffd200;
+            justify-self: flex-start;
+            margin: 0%;
+            box-sizing: border-box;
+            margin-left: -134px;
+            width: 0%;
+            height: 129px;
+            align-self: center;
+        }
+        #header-bot h2{
+            line-height: 80px;
+        }
+    }
+
+    @media screen and (max-width: 492px){
+        #john-card{
+            margin-left: 0%;
+        }
+        }
+    }

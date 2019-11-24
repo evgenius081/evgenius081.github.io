@@ -7,10 +7,6 @@
     font-size: 18px;
 }
 
-body{
-    min-width: 414px;
-}
-
 a{
     color: #000000;
 }
@@ -100,12 +96,16 @@ main h2{
 
 #creating{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #chain{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 86%;
     margin-bottom: 92px;
 }
 
@@ -119,7 +119,7 @@ main h2{
     justify-content: center;
 }
 
-.devider-line{
+.step-devider{
     align-self: flex-start;
     margin-top: 66px;
     width: 8.6%;
@@ -140,8 +140,8 @@ main h2{
     padding-top: 60px;
 }
 
-#card-wrapper{
-    width: 70%;
+#advant-wrapper{
+    max-width: 1080px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -153,7 +153,6 @@ main h2{
     flex-direction: column;
     align-items: flex-start;
     flex-basis: 26%;
-    margin: 10px auto;
 }
 
 #social{
@@ -213,27 +212,23 @@ main h2{
 }
 
 #solutions{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding-bottom: 115px;
 }
 
 #solutions h2{
-    margin-bottom: 21px;
+    margin: 0px auto 21px auto;
     text-align: center;
 }
 
-#solution-wrapper{
-    width: 74%;
+#solut-wrapper{
+    max-width: 1080px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .solut-card{
-    margin: 40px auto;
     width: 310px;
     height: 410px;
     border: 5px solid #ffd200;
@@ -313,18 +308,18 @@ main h2{
     display: block;
     content: "";
     position: absolute;
-    left: 32px;
+    left: 10%;
     top: -22px;
     border-bottom: 22px solid #ffd200;
     border-right: 22px solid transparent;
     border-left: 22px solid transparent;
-    width: 194px;
+    width: 63%;
 }
 
 #best-text{
     text-transform: uppercase;
     position: absolute;
-    left: 96px;
+    left: 30%;
     top: -13px;
     color: #e11a27;
     font-size: 18px;
@@ -337,8 +332,8 @@ main h2{
 }
 
 #john-card{
-    margin-left: 14%;
-    max-width: 540px;
+    margin: 0 auto;
+    max-width: 1080px;
     padding-bottom: 54px;
 }
 
@@ -359,6 +354,10 @@ main h2{
 
 #john-name{
     font-size: 30px;
+}
+
+#text-wrapper{
+    max-width: 540px;
 }
 
 #person-text{
@@ -385,7 +384,7 @@ main h2{
 }
 
 #notes{
-    width: 71%;
+    max-width: 1080px;
     margin: 0 auto;
     padding: 93px 0px 43px 0px;
     display: flex;
@@ -404,7 +403,6 @@ main h2{
 
 .note-block{
     width: 310px;
-    margin: 10px auto;
 }
 
 .note-block h3{
@@ -450,7 +448,7 @@ footer{
 }
 
 #footer-wrapper{
-    width: 71%;
+    max-width: 1080px;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
@@ -543,86 +541,38 @@ footer{
     height: 48px;
 }
 
-@media screen and (max-width: 800px){
-    #phone{
-        display: none;
-    }
+    @media screen and (max-width: 1125px){
+        #advant-wrapper, #solut-wrapper, #notes-wrapper, #footer-wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 71%;
+            margin: 0 auto;
+        } 
 
-    #login{
-        display: none;
-    }
+        #john-card{
+            display: flex;
+            flex-direction: column;
+            width: 71%;
+            margin: 0 auto;
+        }
 
-    #logo{
-        padding-right: 0px;
-        margin: 0 auto;
-    }
-    
-    #footer-list{
-        margin: 0 auto;
-    }
+        #footer-wrapper{
+            align-items: flex-start;
+        }
 
-    #footer-wrapper{
-        justify-content: center;
-    }
+        #advant-wrapper, #solut-wrapper, #notes-wrapper{
+            flex-wrap: wrap;
+        }
 
-    #soc-net{
-        margin: 0 auto;
-    }
+        .advant-card, .solut-card, .note-block{
+            margin: 40px auto;
+        }
     }
 
     @media screen and (max-width: 1012px){
         #soc-net{
             margin-left: 7%;
-        }
-    }
-
-    @media screen and (max-width: 752px){
-        #list3{
-            display: none;
-        }
-        #testimonial{
-            background: none;
-            background: #f7f0e6;
-        }
-    }
-
-    @media screen and (max-width: 580px){        
-        #list2{
-            display: none;
-        }
-        
-        #chain{
-            flex-direction: column;
-        }
-
-        .step-wrapper{
-            display: flex;
-            align-items: center;
-        }
-
-        .step-wrapper p{
-            margin-left: 20px;
-        }
-
-        .devider-line{
-            border-top: none;
-            border-left:  5px dashed #ffd200;
-            justify-self: flex-start;
-            margin: 0%;
-            box-sizing: border-box;
-            margin-left: -134px;
-            width: 0%;
-            height: 129px;
-            align-self: center;
-        }
-        #header-bot h2{
-            line-height: 80px;
-        }
-    }
-
-    @media screen and (max-width: 492px){
-        #john-card{
-            margin-left: 0%;
         }
     }
 
@@ -641,3 +591,109 @@ footer{
             color: #fff;
         }
     }
+
+    @media screen and (max-width: 800px){
+        #list3{
+            display: none;
+        }
+
+        #phone{
+            display: none;
+        }
+
+        #login{
+            display: none;
+        }
+
+        #logo{
+            padding-right: 0px;
+            margin: 0 auto;
+        }
+    
+        #footer-list{
+            margin: 0 auto;
+        }
+
+        #footer-wrapper{
+            justify-content: center;
+        }
+
+        #soc-net{
+            margin: 0 auto;
+        }
+    }
+
+
+    @media screen and (max-width: 752px){
+        #testimonial{
+            background: none;
+            background: #f7f0e6;
+        }
+    }
+
+    @media screen and (max-width: 640px){        
+        #list2{
+            display: none;
+        }
+    
+        #chain{
+            width: 68%;
+            flex-direction: column;
+            padding: 40px 0;
+            margin: 0 auto;
+            align-items: flex-start;
+        }
+
+        .step-wrapper{
+            display: flex;
+            align-items: center;
+
+        }
+
+        .step-wrapper p{
+            margin-left: 20px;
+        }
+
+        .step-devider{
+            border-top: none;
+            border-left:  5px dashed #ffd200;
+            margin: 0%;
+            margin-left: 67.5px;
+            box-sizing: border-box;
+            width: 0%;
+            height: 129px;
+        }
+        #header-bot h2{
+            line-height: 80px;
+        }
+    }
+
+    @media screen and (max-width: 492px){
+        #john-card{
+            margin-left: 0%;
+            width: 90vw;
+        }
+
+        .odd-button{
+            padding: 20px 10px;
+        }
+    }
+
+    @media screen and (max-width: 450px){
+        *:not(#creating *){
+            margin-left: 0%;
+            margin-right: 0%;
+            padding-left: 0%;
+            padding-right: 0%;
+        }
+
+        main > section >div{
+            width: 65%;
+        }
+
+        footer > section >div{
+            width: 65%;
+        }
+    }
+
+    /* По задумке всё, что пропало при сжатии экрана, дoлжно появиться в боковом меню, но мы не умеем делать выезжающее по нажатию кнопки меню, поэтому оно просто пропадает */

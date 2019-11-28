@@ -169,6 +169,7 @@ for(var i = 1; i<=7; i++){
     if(i === 1 || i === 7){
         outSpaces = "   ";
         console.log(outSpaces, "*");
+        outSpaces  = "";
     }else if(i<=4){
         for(var j = 1; i<k; i++){
         outSpaces+=" ";
@@ -176,11 +177,12 @@ for(var i = 1; i<=7; i++){
         for(var j = 1; i<p; i++){
             inSpaces+=" "; 
         }
+        
+        console.log(outSpaces, "*", inSpaces, "*");
         outSpaces = "";
         inSpaces = "";
         p++;
         k--;
-        console.log(outSpaces, "*", inSpaces, "*");
     }else if(i>4){
         for(var j = 1; i<=k; i++){
             outSpaces+=" ";
@@ -191,9 +193,10 @@ for(var i = 1; i<=7; i++){
                 
         }
         p--;
-     outSpaces = "";
+    
+        console.log(outSpaces, "*", inSpaces, "*"); 
+        outSpaces = "";
         inSpaces = "";
-        console.log(outSpaces, "*", inSpaces, "*");
     }
 }
 

@@ -11,6 +11,19 @@
 // team[100] = 'Boris';
 
 
+// .pop();
+// .push();
+// .shift();
+// .unshift();
+// .concat();
+// .slice();
+// .splice();
+// .indexOf();
+// .includes();
+// .join();
+// .split();
+
+
 // 1.1  Создать массив из 10ти элементов и вывести на экран сумму всех элементов массива.
 // var arr = [1, 99, 98, 76, 80, 35, 12,  15, 79, 82];
 // var sum = 0;
@@ -63,7 +76,7 @@
 // 2.3 Заполнить массив последовательными нечетными числами начиная с единицы. (Количество элементов массива: 8) 
 // var arr = [];
 // var k = 1;
-// for(var i=0; i<8; i++){
+// for(var i=0; i<=8; i++){
 //     arr[i] = k;
 //     k+=2;
 // }
@@ -108,8 +121,8 @@
 
 // 3.4 Создать массив из 10 чисел. Вывести на экран наибольшее число из этого массива. 
 // var arr = [1, 99, 98, 76, 80, 35, 12,  15, 79, 82];
-// var max = arr[1];
-// for(var i = 0; i <= arr.length; i++ ){
+// var max = arr[0];
+// for(var i = 0; i < arr.length; i++ ){
 //     if(arr[i]>max){
 //         max = arr[i];
 //     }
@@ -134,14 +147,99 @@ var arr = ["John", "Peter", "Wick", "Jiorno", "Diavolo"];
 // arr.unshift('Greg', "Cesar");
 // console.log(arr);
 
-var team = ["Buchelatii", "Mista", "Guido", "Narancia"];
+// var team = ["Buchelatii", "Mista", "Guido", "Narancia"];
 
-// .concat()  объединяет массивы в новой переменной
+// .concat()  объединяет массивы в новой переменной,  возвращает новый массив
 // var arr2 = arr.concat(team);
 // console.log(arr2);
 
 // .slice()  копирует кусок массива от n до m
-var copy = team.slice(1,3);
-console.log(copy);
+// var copy = team.slice(1,3);
+// console.log(copy);
 // если поставить одно число, то от n до конца
 // если ничего не ставить, то скопирует весь массив
+
+var k=2;
+var p = 1;
+var outSpaces = "";
+var inSpaces = "";
+
+
+for(var i = 1; i<=7; i++){
+    if(i === 1 || i === 7){
+        outSpaces = "   ";
+        console.log(outSpaces, "*");
+    }else if(i<=4){
+        for(var j = 1; i<k; i++){
+        outSpaces+=" ";
+        }
+        for(var j = 1; i<p; i++){
+            inSpaces+=" "; 
+        }
+        p++;
+        k--;
+        console.log(outSpaces, "*", inSpaces, "*");
+    }else if(i>4){
+        for(var j = 1; i<=k; i++){
+            outSpaces+=" ";
+        }
+        k++;
+        for(var j = 1; i<=p; i++){
+                inSpaces+=" ";
+                
+        }
+        p--;
+        console.log(outSpaces, "*", inSpaces, "*");
+    }
+}
+
+"   *"
+"  * *"
+" *   *"
+"*     *"
+" *   *"
+"  * *"
+"   *"
+
+
+// .splice() вырезает любое количество элементов откуда удобно
+// arr.splice(2,1);
+// console.log(arr);
+// arr.splice(2, 0, "Kewin");
+// console.log(arr);
+// arr.splice(2,2, "Swen", "Jake");
+// console.log(arr);
+// console.log(arr.splice(2,1));
+
+// .indexOf()  если такой элемент есть, возвращает его индекс, а если нету, вернёт -1
+// console.log(arr.indexOf("Wick"));
+
+// .includes()  возвращает true если есть и false если нет
+// console.log(arr.includes("Wick"));
+
+// .join()  превращает массив в строку
+// console.log(arr.join("@"));
+
+
+
+
+// для строк
+
+// .split()  превращает строку в массив, как только он наткнётся на разделитель
+// var str = "Hello, amazing world";
+// console.log(str.split(' '));
+
+// .toUpperCase()
+// var str = "Hello, amazing world";
+// console.log(str.toUpperCase());
+
+// .toLowerCase()
+// var str = "Hello, amazing world";
+// console.log(str.toLowerCase());
+
+
+// var badGuys = ["Evlampiy", "Nikodim", "Akakij", "Policarp"];
+// var goodGuys = ["Lukjan", "Feofil", "Afinogen"];
+
+// goodGuys.push(badGuys.splice(badGuys.indexOf('Nikodim'), 1)[0]);
+// console.log(goodGuys);

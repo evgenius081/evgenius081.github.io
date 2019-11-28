@@ -176,6 +176,8 @@ for(var i = 1; i<=7; i++){
         for(var j = 1; i<p; i++){
             inSpaces+=" "; 
         }
+        outSpaces = "";
+        inSpaces = "";
         p++;
         k--;
         console.log(outSpaces, "*", inSpaces, "*");
@@ -189,6 +191,8 @@ for(var i = 1; i<=7; i++){
                 
         }
         p--;
+     outSpaces = "";
+        inSpaces = "";
         console.log(outSpaces, "*", inSpaces, "*");
     }
 }

@@ -171,10 +171,10 @@ for(var i = 1; i<=7; i++){
         console.log(outSpaces, "*");
         outSpaces  = "";
     }else if(i<=4){
-        for(var j = 1; i<k; i++){
+        for(var j = 0; i<k; i++){
         outSpaces+=" ";
         }
-        for(var j = 1; i<p; i++){
+        for(var j = 0; i<p; i++){
             inSpaces+=" "; 
         }
         
@@ -184,11 +184,11 @@ for(var i = 1; i<=7; i++){
         p++;
         k--;
     }else if(i>4){
-        for(var j = 1; i<=k; i++){
+        for(var j = 0; i<=k; i++){
             outSpaces+=" ";
         }
         k++;
-        for(var j = 1; i<=p; i++){
+        for(var j = 0; i<=p; i++){
                 inSpaces+=" ";
                 
         }

@@ -126,4 +126,76 @@
 
 // self-invoking func
 
-(function(){console.log("func!")})();
+// (function(){console.log("func!")})();
+
+
+
+// var barcelona = ["Messi", "Raul", "Ronaldo", "Mitrofan"];
+// function team (fbArr, getOut){
+//     var fbArrCopy =fbArr.slice();
+//     for(var i = 0; i < fbArrCopy.length; i++){
+//         fbArrCopy[i] = "Mr. " + fbArrCopy[i];
+//     }
+//     getOut(fbArrCopy);
+// }
+// team(barcelona, showAlert);
+// function showAlert(arr){
+//     for(var i = 0; i < arr.length; i++){
+//         alert(arr[i]);
+//     }
+// }
+// function showWrite(arr){
+//     for(var i = 0; i < arr.length; i++){
+//         document.write(arr[i] + '<br/>');
+//     }
+// }
+// function showConsole(arr){
+//     for(var i = 0; i < arr.length; i++){
+//         console.log(arr[i]);
+//     }
+// }
+
+
+
+// function joiner (arr1, arr2, callback){
+//     var arrNew = arr1.concat(arr2);
+//     callback(arrNew);
+// }
+
+// joiner(["a","b","c","d"], ["e", "f", "g", "h"], callback2);
+
+// function callback1(arr){
+//     if(arr.length > 4){
+//     arr.splice(3, arr.length-4);
+//     }
+//     console.log(arr);
+// }
+
+// function callback2 (arr){
+//     if(arr.length < 8){
+//         for(var i = arr.length-8; i<0; i++){
+//             arr.push("Mitrofan");
+//         }
+//     }
+//     console.log(arr);
+// }
+
+
+
+function boss (str, callback){
+    var newWord = str.toUpperCase();
+    callback(newWord);
+}
+boss("king", worker2);
+
+function worker1(str){
+    if(str.length > 5){
+        console.log("Ура! Я работаю");
+    }else{
+        console.log("Увы! Я не работаю");
+    }
+} 
+
+function worker2(str){
+    console.log(str);
+}

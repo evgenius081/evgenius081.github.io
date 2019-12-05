@@ -22,6 +22,14 @@
 // .includes();
 // .join();
 // .split();
+// .map()
+// .foreach()
+// .some()
+// .every()
+// .toLowerCase()
+// .toUpperCase()
+// .reduce()
+// .reduceRight()
 
 
 // 1.1  Создать массив из 10ти элементов и вывести на экран сумму всех элементов массива.
@@ -159,38 +167,47 @@ var arr = ["John", "Peter", "Wick", "Jiorno", "Diavolo"];
 // если поставить одно число, то от n до конца
 // если ничего не ставить, то скопирует весь массив
 
-var k=2;
-var p = 1;
-var outSpaces = "";
-var inSpaces = "";
+// var k=2;
+// var p = 1;
+// var outSpaces = "";
+// var inSpaces = "";
 
 
-for(var i = 1; i<=7; i++){
-    if(i === 1 || i === 7){
-        outSpaces = "   ";
-        console.log(outSpaces, "*");
-        outSpaces  = "";
-    }else if(i<=4){
-        for(var j = 0; j<=k; j++){
-        outSpaces +=  " ";
-        }
-        for(var l = 0; l<=p; i++){
-        inSpaces += " ";
-        }
-        console.log(outSpaces, "*", inSpaces, "*");
-        p++;
-        k--;
-        outSpace = "";
-        inSpaces = "";
-}
+// for(var i = 1; i<=7; i++){
+//     if(i === 1 || i === 7){
+//         outSpaces = "   ";
+//         console.log(outSpaces, "*");
+//     }else if(i<=4){
+//         for(var j = 1; i<k; i++){
+//         outSpaces+=" ";
+//         }
+//         for(var j = 1; i<p; i++){
+//             inSpaces+=" "; 
+//         }
+//         p++;
+//         k--;
+//         console.log(outSpaces, "*", inSpaces, "*");
+//     }else if(i>4){
+//         for(var j = 1; i<=k; i++){
+//             outSpaces+=" ";
+//         }
+//         k++;
+//         for(var j = 1; i<=p; i++){
+//                 inSpaces+=" ";
+                
+//         }
+//         p--;
+//         console.log(outSpaces, "*", inSpaces, "*");
+//     }
+// }
 
-"   *"
-"  * *"
-" *   *"
-"*     *"
-" *   *"
-"  * *"
-"   *"
+// "   *"
+// "  * *"
+// " *   *"
+// "*     *"
+// " *   *"
+// "  * *"
+// "   *"
 
 
 // .splice() вырезает любое количество элементов откуда удобно
@@ -234,3 +251,46 @@ for(var i = 1; i<=7; i++){
 
 // goodGuys.push(badGuys.splice(badGuys.indexOf('Nikodim'), 1)[0]);
 // console.log(goodGuys);
+
+
+// .map()  Действия с массивом с помощью специальной функции внутри, изменяет массив
+// var res = arr.map(function(player, index, arr){
+//     return "Mr. " + player;
+// });
+// console.log(res);
+// console.log(arr);
+
+
+
+// .forEach()    Действия с массивом, не изменяя его
+// arr.forEach(function(player, index, arr){
+//     console.log(player);
+// })
+
+
+
+var numbers = [2,2,2,2];
+var numbers2 = [1,2,3,4,5,6]
+// .every()  возвращает true, если все одинаковые
+// var res = numbers.every(function(num, i, arr){
+//     return num === 2
+// })
+
+
+
+// .some()  возвращает true, если в массиве найдётся хотябы один такой элемент
+// var res = numbers.some(function(num, i, arr){
+//     return num === 3
+// })
+
+
+
+// .reduce()
+// var res = numbers2.reduce(function(acc, item, i, arr){ // acc - начальное значение
+//     return acc+item;
+// }, 0)
+// console.log(res);
+
+
+
+// .reduceRight()  то же, что и reduce, но и наоборот

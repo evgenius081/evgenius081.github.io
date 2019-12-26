@@ -79,5 +79,97 @@
 
 
 // spread
-const arr = [3,1,45,45,6,236,67,85,9,65,34567]
-console.log( Math.max(...arr) );
+// const arr = [3,1,45,45,6,236,67,85,9,65,34567]
+// console.log( Math.max(...arr) );
+
+
+// template strings
+// var b = 143;
+// var a = `
+//     <h1>
+//     Hello world!
+//     </h1>
+//     4{b}
+// `
+// document.write(a);
+
+
+
+// class
+// function Person(name, age){
+//     this.name = name;
+//     this.age = age;
+// }
+
+// Person.prototype.run = function (){
+//     console.log(this.name + " runs!");
+// }
+
+// function Programmer (name, age, tech){
+//     Person.apply(this, arguments);
+//     this.tech = tech
+// }
+
+// Programmer.prototype = Object.create(Person.prototype);
+// Programmer.prototype.costructor = Programmer;
+
+// Programmer.prototype.code = fucntion(){
+//     console.log(this.name + " is coding on " + this.tech);
+// }
+
+// var pers1 = new Programmer("John", 32, ["JS", "CSS"]);
+// pers1.code();
+
+// class Person {
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     run(){
+//         console.log(this.name + " runs!")
+//     }
+// }
+
+// class Programmer extends Person {
+//     constructor(name, age, tech){
+//         super(name, age);
+//         this.tech = tech;
+//     }
+//     code(){
+//         console.log(this.name + " is coding on " + this.tech[0])
+//     }
+
+//     static sayHi(){//статический метод класса
+//         console.log("Hey dude!")
+//     }
+// }
+
+// var pers2 = new Programmer("Jonny", 32, ["HTML", "CSS", "JS"]);
+// pers2.code();
+
+
+
+class Mechanism {
+    constructor(width, height){
+        this.height = height;
+        this.width  = width;
+    }
+    repair(){
+        console.log(`Mechanism is repairing`);
+    }
+}
+
+class Car extends Mechanism{
+    constructor(width, height, brand, color){
+        super(width, height);
+        this.brand = brand;
+        this.color = color;
+    }
+    park(){
+        console.log(`${this.brand} is parking`);
+    }
+}
+
+let nissan = new Car(2, 3, "Nissan", "balck");
+nissan.park();
+nissan.repair();

@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    font-family: 'segoe ui';
+    text-align: center;
+}
+
+#end_game {
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    width: 400px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 32px;
+    border: 1px solid rgba(0,0,0, .3);
+    box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 999;
+}
+
+#end_game strong {
+    color: darkgreen;
+}
+
+#main {
+    background: rgb(63, 65, 68);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    width: 1000px;
+    height: 800px;
+    margin: 50px auto;
+    color: #fff;
+    padding: 20px;
+}
+
+#map {
+    width: 800px;
+    height: 600px;
+    margin:0 auto;
+    background: url(./map.png);
+}
+#hint {
+    font-size: 40px;
+}
+
+
+

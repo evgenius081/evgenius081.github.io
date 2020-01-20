@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'segoe ui', sans-serif;
+}
+
+body {
+    background: url(https://static.dezeen.com/uploads/2019/11/cobild-office-interiors-melbourne-australia-mim-design_dezeen_hero-1.jpg) center / cover no-repeat ;
+    height: 100vh;
+}
+
+#signIn {
+    position: absolute;
+    left: 50%;
+    top:50%;
+    font-size: 40px;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    background: rgba(255,255,255,0.9);
+}
+
+#signIn > div > span {
+    color: #250301;
+}
+
+#signIn > div > input:not(#sendForm) {
+    font-size: 40px;
+    display: block;
+    border:none;
+    outline: none;
+    padding: 10px;
+    background-color: rgba(255, 255, 0, 0.4);
+}
+
+#emailWrapper,
+#passwordWrapper {
+    margin-bottom: 30px;
+    position:relative;
+}
+
+#sendForm {
+    padding: 20px;
+    text-align:center;
+    border: none;
+    background: #F8D888;
+    font-size: 40px;
+    color: #2d2d2d;
+    cursor: pointer;
+    width: 60%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+#sendForm:hover {
+    background: #30251F;
+    color:#F8D888;
+}
+
+#sendBtn {
+    text-align: center;
+}
+
+.error-hint {
+    position: absolute;
+    left: 120%;
+    width: 220px;
+    top: 45%;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px rgba(0,0,0,0.4);
+}
+
+.error-hint::after {
+    position: absolute;
+    border: 15px  solid #fff;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    transform: rotate(45deg);
+    left: -8px;
+    top: 15px;
+}
+
+

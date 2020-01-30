@@ -5,6 +5,7 @@ $(function(){
     const userText = $(`#userText`);
     const userColor = $(`#userColor`);
     const toDoList = $(`#toDoList`);
+    const select = $(`#userStyleType`);
     creater.click(function(){
         if(userText.val()){
             let item = $(`<li>${userText.val()}</li>`);
@@ -23,10 +24,12 @@ $(function(){
                 $(this).addClass(`active`);
                 userText.val( $(this).text() );
                 userColor.val( $(this).css(`color`) ); 
+                userStyle.type.val( $(this).css(`list-style-type`))
             }else{
                 $(this).addClass(`active`);
                 userText.val( $(this).text() );
-                userColor.val( $(this).css(`color`) ); 
+                userColor.val( $(this).css(`color`) );
+                userStyleType.val( $(this).css(`list-style-type`)) 
             }
         }
     }

@@ -173,3 +173,7 @@ class Car extends Mechanism{
 let nissan = new Car(2, 3, "Nissan", "balck");
 nissan.park();
 nissan.repair();
+
+
+
+const func = x => y => x+y; // каррирование

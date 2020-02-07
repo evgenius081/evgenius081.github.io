@@ -70,152 +70,150 @@ $(function(){
     const meatVariants = $(`#meat ul li`);
     const cheeseVariants = $(`#cheese ul li`);
     const souceVariants = $(`#souce ul li`);
-    const variants = [baseVariants, meatVariants, cheeseVariants, souceVariants];
     const totalPrice = $(`#totalPrice`);
+    const btn = $(`#complete`);
+    const ingrid = $(`#ingridients`);
+    const variants = [baseVariants, meatVariants, cheeseVariants, souceVariants];
     let chosenNumberMeat = 0;
     let chosenNumberCheese = 0;
     var completeStages = 0;
-    const btn = $(`#complete`);
-    const ingrid = $(`#ingridients`);
     let sum = 0;
 
 
     function objectSender(){
-
-    }
-
-    function sumCounter(){
-
-    }
-
-    function deleter(){
-        let a = $(this.parentElement).text()
-        let b = $(`.active`);
-        
-        for(var i = 0; i < b.length; i++){
-            if(b[i].textContent === a){
-           if(b[i].parentElement === document.getElementById(`basement`).children[1] || b[i].parentElement === document.getElementById(`souce`).children[1]){
-            for(var j =0 ; j < 4; j++){
-                    b[i].parentElement.children[j].addEventListener(`click`, ordinaryChoice);
-                    b[i].parentElement.children[j].style.color = `#000`;
-            }
-            for( var j = 0; j < ingridients.length;  j++){
-                if(b[i].textContent === ingridients[j].name){
-                    sum = sum - ingridients[j].price;
+        let counter = 0;
+        for(var i = 0; i < ingridients.length; i++){
+            for(var j = 0; j < $(ingrid).children().length; j++){ 
+                if($(ingrid).children()[j].textContent === ingridients[i].name){
+                    counter++;
+                    chosenIngridients[`component${counter}`] = ingridients[i]
                 }
             }
-            totalPrice.text(`Цена: ${sum}$`);
-            b[i].classList.remove(`active`);
-            b[i].style.color = `#000`;
-            pizzaPartChanger(--completeStages);
-            break;
-        }else{
-            let res = b[i].parentElement === document.getElementById(`meat`).children[1] ? chosenNumberMeat : chosenNumberCheese; 
-        let whoIsIt = b[i].parentElement === document.getElementById(`meat`).children[1] ? `meat` :  `cheese`;
-        if( $(b[i]).hasClass(`active`) ){
-            if(res === 1){
-                $(b[i]).removeClass(`active`);
-                b[i].style.color = `#000`
-                res --;
-                pizzaPartChanger(--completeStages);
-                for(var j = 0; j < 6; j++){
-                    if($(ingrid).children()[j].textContent === b[i].textContent){
-                        ingrid.children()[j].remove();
-                        break;
-                    }
-                }
-            }else if(res > 1){
-                $(b[i]).removeClass(`active`);
-                res--;
-                for(var j = 0 ; j < 4; j++){
-                    if(!b[i].parentElement.children[j].classList.contains(`active`) || !b[i]){
-                        b[i].parentElement.children[j].addEventListener(`click`, twiceChoice);
-                        b[i].parentElement.children[j].style.color = `#000`;
-                    }
-                }
-                for(var j = 0; j < 6; j++){
-                if(ingrid.children()[j].textContent === b[i].textContent){
-                    ingrid.children()[j].remove();
+        }
+        let order = JSON.stringify(chosenIngridients);
+        console.log(order); 
+    }
+
+    function orderElementDeleter(){
+        let active = $(`.active`);
+        for(var i = 0; i < active.length; i++){
+            if(active[i].textContent === $(this.parentElement).text()){
+                if(active[i].parentElement === document.getElementById(`basement`).children[1] || active[i].parentElement === document.getElementById(`souce`).children[1]){
+                    listElementSelectionActivator(active[i]);
+                    totalPrice.text(reduseSum(active[i]));
+                    active[i].classList.remove(`active`);
+                    active[i].style.color = `#000`;
+                    pizzaPartChanger(--completeStages);
                     break;
+                }else{
+                    let res = active[i].parentElement === document.getElementById(`meat`).children[1] ? chosenNumberMeat : chosenNumberCheese; 
+                    let whoIsIt = active[i].parentElement === document.getElementById(`meat`).children[1] ? `meat` :  `cheese`;
+                    if( $(active[i]).hasClass(`active`) ){
+                        if(res === 1){
+                            $(active[i]).removeClass(`active`);
+                            active[i].style.color = `#000`;
+                            res --;
+                            pizzaPartChanger(--completeStages);
+                        }else if(res > 1){
+                            $(active[i]).removeClass(`active`);
+                            res--;
+                            listElementSelectionActivator(active[i]);
+                        }
+                    }
+                    totalPrice.text(reduseSum(active[i]));
+                    whoIsIt === `meat` ? chosenNumberMeat = res : chosenNumberCheese = res;
                 }
-            }
-            totalPrice.text(`Цена: ${sum}$`);
-            }
-            for( var j = 0; j < ingridients.length;  j++){
-                if(b[i].textContent === ingridients[j].name){
-                    sum = sum - ingridients[j].price;
-                }
-            }
-            totalPrice.text(`Цена: ${sum}$`);
-            whoIsIt === `meat` ? chosenNumberMeat = res : chosenNumberCheese = res;
+            }     
         }
-        }     
-        }
-        
-    }this.parentElement.remove();
+        this.parentElement.remove();
     }
 
-    function orderSetter(elem){
+    function reduseSum(elem){
+        for( var j = 0; j < ingridients.length;  j++){
+            if(elem.textContent === ingridients[j].name){
+                sum = sum - ingridients[j].price;
+            }
+        }
+        return `Цена: ${sum}$`
+    }
+
+    function increaseSum(elem){
+        for( var j = 0; j < ingridients.length;  j++){
+            if(elem.textContent === ingridients[j].name){
+                sum = sum + ingridients[j].price;
+            }
+        }
+        return `Цена: ${sum}$`
+    }
+
+    function orderElementsCreater(elem){
         let elemClone = $(elem).clone();
         elemClone.css(`color`, `#000`);
         elemClone.removeClass(`active`);
-        elemClone.addClass(`orderElement`)
-        elemClone.append(`<div class="deleter"></div>`)
+        elemClone.addClass(`orderElement`);
+        elemClone.append(`<div class="orderElementDeleter"></div>`);
         ingrid.append(elemClone);
-        $(`.deleter`).click(deleter);
+        $(`.orderElementDeleter`).click(orderElementDeleter);
     }
 
-
-
-    function selectionDisabler(elem){
-        
-        for(var i =0 ; i < 4; i++){
-            elem.parentElement.children[i].removeEventListener(`click`, ordinaryChoice);
-            elem.parentElement.children[i].style.color = `#455a64`
+    function orderElementsDeleter(elem){
+        for(var i = 0; i < 6; i++){
+            if($(ingrid).children()[i].textContent === elem.textContent){
+                ingrid.children()[i].remove();
+                break;
+            }
         }
-        elem.addEventListener(`click`, ordinaryChoice);
-        elem.style.color = `#fdd835`
     }
 
+    function listElementSelectionDisabler(elem){
+        if(elem.parentElement === document.getElementById(`basement`).children[1] || elem.parentElement === document.getElementById(`souce`).children[1]){
+            for(var i =0 ; i < 4; i++){
+                elem.parentElement.children[i].removeEventListener(`click`, ordinaryChoice);
+                elem.parentElement.children[i].style.color = `#455a64`;
+            }
+            elem.addEventListener(`click`, ordinaryChoice);
+            elem.style.color = `#fdd835`;
+        }else{
+            for(var i = 0 ; i < 4; i++){
+                if(!elem.parentElement.children[i].classList.contains(`active`) || !elem){
+                    elem.parentElement.children[i].removeEventListener(`click`, twiceChoice);
+                    elem.parentElement.children[i].style.color = `#455a64`;
+                }
+            }
+        }
+    }
 
+    function listElementSelectionActivator(elem){
+        if(elem.parentElement === document.getElementById(`basement`).children[1] || elem.parentElement === document.getElementById(`souce`).children[1]){
+            for(var i = 0 ; i < 4; i++){
+                elem.parentElement.children[i].addEventListener(`click`, ordinaryChoice);
+                elem.parentElement.children[i].style.color = `#000`;
+            }
+        }else{
+            for(var i = 0 ; i < 4; i++){
+                if(!elem.parentElement.children[i].classList.contains(`active`) || !elem){
+                elem.parentElement.children[i].addEventListener(`click`, twiceChoice);
+                elem.parentElement.children[i].style.color = `#000`;
+                }
+            }
+        }
+    }
 
     function ordinaryChoice(){ 
-            if( $(this).hasClass(`active`) ){
-                $(this).removeClass(`active`);
-                for(var i =0 ; i < 4; i++){
-                    this.parentElement.children[i].addEventListener(`click`, ordinaryChoice);
-                    this.parentElement.children[i].style.color = `#000`;
-                }
-                for(var i = 0; i < 6; i++){
-                    if($(ingrid).children()[i].textContent === this.textContent){
-                        ingrid.children()[i].remove();
-                        break;
-                    }
-                }
-                for( var j = 0; j < ingridients.length;  j++){
-                    if(this.textContent === ingridients[j].name){
-                        sum = sum - ingridients[j].price;
-                    }
-                }
-                    totalPrice.text(`Цена: ${sum}$`);
-                pizzaPartChanger(--completeStages);
-            }else{
-                $(this).addClass(`active`);
-                selectionDisabler(this);
-                pizzaPartChanger(++completeStages);
-                orderSetter(this);
-                for( var j = 0; j < ingridients.length;  j++){
-                    if(this.textContent === ingridients[j].name){
-                        sum = sum + ingridients[j].price;
-                    }
-                }
-                totalPrice.text(`Цена: ${sum}$`);
-            }
+        if( $(this).hasClass(`active`) ){
+            $(this).removeClass(`active`);
+            listElementSelectionActivator(this);
+            orderElementsDeleter(this);
+            totalPrice.text(reduseSum(this));
+            pizzaPartChanger(--completeStages);
+        }else{
+            $(this).addClass(`active`);
+            listElementSelectionDisabler(this);
+            pizzaPartChanger(++completeStages);
+            orderElementsCreater(this);
+            totalPrice.text(increaseSum(this));
+        }
     }
-
-
-
-
 
     function twiceChoice(){
         let res = this.parentElement === document.getElementById(`meat`).children[1] ? chosenNumberMeat : chosenNumberCheese; 
@@ -223,116 +221,73 @@ $(function(){
         if( $(this).hasClass(`active`) ){
             if(res === 1){
                 $(this).removeClass(`active`);
-                this.style.color = `#000`
+                this.style.color = `#000`;
                 res --;
                 pizzaPartChanger(--completeStages);
-                for(var i = 0; i < 6; i++){
-                    if($(ingrid).children()[i].textContent === this.textContent){
-                        ingrid.children()[i].remove();
-                        break;
-                    }
-                }
             }else if(res > 1){
                 $(this).removeClass(`active`);
                 res--;
-                for(var i = 0 ; i < 4; i++){
-                    if(!this.parentElement.children[i].classList.contains(`active`) || !this){
-                    this.parentElement.children[i].addEventListener(`click`, twiceChoice);
-                    this.parentElement.children[i].style.color = `#000`;
-                    }
-                }
-                for(var i = 0; i < 6; i++){
-                if($(ingrid).children()[i].textContent === this.textContent){
-                    ingrid.children()[i].remove();
-                    break;
-                }
+                listElementSelectionActivator(this);
             }
-            
-            }
-            for( var i = 0; i < ingridients.length;  i++){
-                if(this.textContent === ingridients[i].name){
-                    sum = sum - ingridients[i].price;
-                }
-            }
-            totalPrice.text(`Цена: ${sum}$`);
+            orderElementsDeleter(this);
+            totalPrice.text(reduseSum(this));
         }else{
             if( res === 0){
                 res++;
                 $(this).addClass(`active`);
-                orderSetter(this);
+                orderElementsCreater(this);
                 this.style.color = `#fdd835`;
                 pizzaPartChanger(++completeStages);
-                for( var i = 0; i < ingridients.length;  i++){
-                    if(this.textContent === ingridients[i].name){
-                        sum = sum + ingridients[i].price;
-                    }
-                }
-                totalPrice.text(`Цена: ${sum}$`);
+                totalPrice.text(increaseSum(this));
             }else if(res === 1){
                 $(this).addClass(`active`);
-                orderSetter(this);
+                orderElementsCreater(this);
                 this.style.color = `#fdd835`;
-                for(var i = 0 ; i < 4; i++){
-                    if(!this.parentElement.children[i].classList.contains(`active`) || !this){
-                        this.parentElement.children[i].removeEventListener(`click`, twiceChoice);
-                        this.parentElement.children[i].style.color = `#455a64`;
-                    }
-                }
-                    res++;
-                    for( var i = 0; i < ingridients.length;  i++){
-                        if(this.textContent === ingridients[i].name){
-                            sum = sum + ingridients[i].price;
-                        }
-                    }
-                    totalPrice.text(`Цена: ${sum}$`);
+                listElementSelectionDisabler(this);
+                res++;
+                totalPrice.text(increaseSum(this));
             }
-
         }
         whoIsIt === `meat` ? chosenNumberMeat = res : chosenNumberCheese = res;
-        sumCounter();
     }
 
-    function clickSetter(obj){
+    function listElementClickSetter(obj){
         let keysNumber = 0;
         for(var key in obj){
             keysNumber++;
             if(keysNumber === 5){
-                break
+                break;
             }
             obj === baseVariants || obj === souceVariants ? obj[key].addEventListener(`click`, ordinaryChoice) :  obj[key].addEventListener(`click`, twiceChoice);
         }
     }
 
-    for(var i = 0; i < 4; i++){
-        clickSetter(variants[i]);
-    }
-
     function pizzaPartChanger(stages){
-    for(var i = 1; i <= 4; i++){
-        document.getElementById(`stage${i}`).style.background = ``;
-    }
-    for(var i = 1; i <= stages; i++){
-        document.getElementById(`stage${i}`).style.background = `url(img/${i}.png) center/cover no-repeat`;
-    }
-   if(stages === 4){
-    btn.prop(`disabled`, false);
-    btn.css(`color`, `#fff`)
-   }else{
-    btn.prop(`disabled`, true);
-    btn.css(`color`, `#455a64`)
-   }
-    }
-
-    function orderElementsCreater(){
-
+        for(var i = 1; i <= 4; i++){
+            document.getElementById(`stage${i}`).style.background = ``;
+        }
+        for(var i = 1; i <= stages; i++){
+            document.getElementById(`stage${i}`).style.background = `url(img/${i}.png) center/cover no-repeat`;
+        }
+        if(stages === 4){
+            btn.prop(`disabled`, false);
+            btn.css(`color`, `#fff`);
+        }else{
+            btn.prop(`disabled`, true);
+            btn.css(`color`, `#455a64`);
+        }
     }
 
     btn.click(function(){
-    // objectSender();
+        objectSender();
         $(`#main *`).css(`display`, `none`);
         $(`#main`).append(`<div id="succes">`);
         $(`#succes`).append(`<p>Ваша пицца скоро будет приготовлена. Спасибо за заказ!</p>`);
-        $(`#succes`).append(`<div id="belissimo">`)
-})
-    
+        $(`#succes`).append(`<div id="belissimo">`);
     })
+
+    for(var i = 0; i < 4; i++){
+        listElementClickSetter(variants[i]);
+    }
+
+})

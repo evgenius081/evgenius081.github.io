@@ -11,13 +11,30 @@ body{
     box-sizing: border-box;
 }
 
+li{
+    padding-left: 0;
+    text-indent: 0;
+    list-style-type: none;
+}
+
+h2{
+    text-align: center;
+}
+
 #main{
-    width: 70%;
+    max-width: 70%;
     margin: 20px auto 0 auto;
     border-radius: 10px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+#selection-wrapper{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -30,25 +47,8 @@ body{
     border-radius: 0 0 10px 10px;
 }
 
-#selection-wrapper{
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
 ul:not(#ingridients){
     cursor: pointer;
-}
-
-li{
-    padding-left: 0;
-    text-indent: 0;
-    list-style-type: none;
-}
-
-h2{
-    text-align: center;
 }
 
 #order{
@@ -66,6 +66,24 @@ h2{
     left: 40px;
 }
 
+
+.orderElement{
+    width: 90%;
+    height: 30px;
+    display: block;
+    position: relative;
+}
+
+.orderElementDeleter{
+    position: absolute;
+    left: 80%;
+    top: 10%;
+    width: 25px;
+    height: 25px;
+    background: url(img/cross.png) center/cover no-repeat;
+    cursor: pointer;
+}
+
 #top{
     display: flex;
     justify-content: center;
@@ -76,24 +94,6 @@ h2{
     min-width: 50%;
     background: #fbc02d;
     border-radius: 0 10px 0 0;
-}
-
-#complete{
-    display: block;
-    background: #bc5100;
-    color: #455a64;
-    border: none;
-    border-radius: 10px;
-    width: 120px;
-    height: 40px;
-    margin: 20px auto;
-    border: 1px solid #bc5100;
-}
-
-#complete:hover{
-    cursor: pointer;
-    background: #ffb04c;
-    transition: all 0.4s ease;
 }
 
 #stages{
@@ -131,6 +131,24 @@ h2{
     top: 100px;
 }
 
+#complete{
+    display: block;
+    background: #bc5100;
+    color: #455a64;
+    border: none;
+    border-radius: 10px;
+    width: 120px;
+    height: 40px;
+    margin: 20px auto;
+    border: 1px solid #bc5100;
+}
+
+#complete:hover{
+    cursor: pointer;
+    background: #ffb04c;
+    transition: all 0.4s ease;
+}
+
 .active{
     background: #000000;
     color: #fdd835;
@@ -163,21 +181,10 @@ h2{
     height: 90%;
 }
 
-.orderElement{
-    width: 90%;
-    height: 30px;
-    display: block;
-    position: relative;
-}
-
-.deleter{
-    position: absolute;
-    left: 80%;
-    top: 10%;
-    width: 25px;
-    height: 25px;
-    background: url(img/cross.png) center/cover no-repeat;
-    cursor: pointer;
+@media screen and (min-width: 1280px){
+    #main{
+        width: 1000px;
+    }
 }
 
 @media screen and (max-width: 1050px){
@@ -211,6 +218,9 @@ h2{
     }
     #succes{
         height: 70%;
+    }
+    #order p{
+        left: 10px;
     }
 }
 
@@ -250,11 +260,22 @@ h2{
         height: 50%;
     }
 
+    #complete{
+        width: 90%;
+    }
+
+    h2{
+        font-size: 16px;
+    }
+
+    #order{
+        padding: 0px;
+    }
 }
 
 @media screen and (max-width: 270px){
     *{
-        font-size: 18px;
+        font-size: 16px;
     }
     #belissimo{
         width: 80%;
@@ -267,6 +288,33 @@ h2{
 
     ul{
         padding: 3px;
+    }
+
+    #stages{
+        width: 80px;
+        height: 80px;
+    }
+    #stages div{
+        width: 40px;
+        height: 40px;
+    }
+    
+    #stage2{
+        position: absolute;
+        left: 40px;
+        background-size: cover;
+    }
+    
+    #stage3{
+        position: absolute;
+        left: 40px;
+        top: 40px;
+    }
+    
+    #stage4{
+        position: absolute;
+        left: 0;
+        top: 40px;
     }
 }
 

@@ -3,155 +3,56 @@
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 19508,
+      "count": 48,
       "max": [
-        26.054159164428711,
-        12.317350387573242,
-        35.781749725341797
+        100,
+        100,
+        100
       ],
       "min": [
-        -25.056739807128906,
-        -28.676509857177734,
-        -0.83940500020980835
+        -100,
+        -100,
+        -100
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 234096,
+      "byteOffset": 576,
       "componentType": 5126,
-      "count": 19508,
+      "count": 48,
       "max": [
-        0.99864357709884644,
+        1,
         1,
         1
       ],
       "min": [
-        -0.9986833930015564,
-        -0.99973732233047485,
+        -1,
+        -1,
         -1
       ],
       "type": "VEC3"
     },
     {
-      "bufferView": 3,
-      "componentType": 5126,
-      "count": 19508,
-      "max": [
-        1,
-        0.9999355673789978,
-        0.99672967195510864,
-        1
-      ],
-      "min": [
-        -1,
-        -1,
-        -1,
-        1
-      ],
-      "type": "VEC4"
-    },
-    {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 19508,
+      "count": 48,
       "max": [
-        0.94950497150421143,
-        0.88697999715805054
+        1,
+        0.999969482421875
       ],
       "min": [
-        0.050494998693466187,
-        0.11302000284194946
-      ],
-      "type": "VEC2"
-    },
-    {
-      "bufferView": 0,
-      "componentType": 5125,
-      "count": 33171,
-      "max": [
-        19507
-      ],
-      "min": [
+        3.0517578125e-05,
         0
       ],
-      "type": "SCALAR"
-    },
-    {
-      "bufferView": 2,
-      "byteOffset": 468192,
-      "componentType": 5126,
-      "count": 20041,
-      "max": [
-        26.054159164428711,
-        12.317350387573242,
-        35.781749725341797
-      ],
-      "min": [
-        -25.056739807128906,
-        -28.676509857177734,
-        -0.83940500020980835
-      ],
-      "type": "VEC3"
-    },
-    {
-      "bufferView": 2,
-      "byteOffset": 708684,
-      "componentType": 5126,
-      "count": 20041,
-      "max": [
-        0.99864250421524048,
-        1,
-        1
-      ],
-      "min": [
-        -0.9986843466758728,
-        -1,
-        -1
-      ],
-      "type": "VEC3"
-    },
-    {
-      "bufferView": 3,
-      "byteOffset": 312128,
-      "componentType": 5126,
-      "count": 20041,
-      "max": [
-        1,
-        1,
-        0.99673968553543091,
-        1
-      ],
-      "min": [
-        -0.99720984697341919,
-        -0.99993568658828735,
-        -1,
-        1
-      ],
-      "type": "VEC4"
-    },
-    {
-      "bufferView": 1,
-      "byteOffset": 156064,
-      "componentType": 5126,
-      "count": 20041,
-      "max": [
-        0.94950497150421143,
-        0.88787299394607544
-      ],
-      "min": [
-        0.050494998693466187,
-        0.11212699860334396
-      ],
       "type": "VEC2"
     },
     {
       "bufferView": 0,
-      "byteOffset": 132684,
       "componentType": 5125,
-      "count": 34521,
+      "count": 108,
       "max": [
-        20040
+        47
       ],
       "min": [
         0
@@ -161,147 +62,87 @@
   ],
   "asset": {
     "extras": {
-      "author": "NomadKing (https://sketchfab.com/nomadking)",
+      "author": "elph (https://sketchfab.com/elph)",
       "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
-      "source": "https://sketchfab.com/3d-models/fluxs-pit-stop-6bb8bd116e384d9f9e7041dbb84e5e24",
-      "title": "Flux's Pit Stop"
+      "source": "https://sketchfab.com/3d-models/the-cube-project-3889f3f0858b497bb36d71a8e4f3cbe9",
+      "title": "The Cube Project"
     },
-    "generator": "Sketchfab-5.24.0",
+    "generator": "Sketchfab-8.48.0",
     "version": "2.0"
   },
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 270768,
+      "byteLength": 432,
       "byteOffset": 0,
       "name": "floatBufferViews",
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteLength": 316392,
-      "byteOffset": 270768,
+      "byteLength": 384,
+      "byteOffset": 432,
       "byteStride": 8,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 949176,
-      "byteOffset": 587160,
+      "byteLength": 1152,
+      "byteOffset": 816,
       "byteStride": 12,
-      "name": "floatBufferViews",
-      "target": 34962
-    },
-    {
-      "buffer": 0,
-      "byteLength": 632784,
-      "byteOffset": 1536336,
-      "byteStride": 16,
       "name": "floatBufferViews",
       "target": 34962
     }
   ],
   "buffers": [
     {
-      "byteLength": 2169120,
+      "byteLength": 1968,
       "uri": "scene.bin"
     }
   ],
-  "extensionsUsed": [
-    "KHR_materials_unlit"
-  ],
   "images": [
     {
-      "uri": "textures/Front_baseColor.jpeg"
-    },
-    {
-      "uri": "textures/Front_emissive.jpeg"
-    },
-    {
-      "uri": "textures/Back_baseColor.jpeg"
+      "uri": "textures/Mat.1_emissive.jpeg"
     }
   ],
   "materials": [
     {
-      "doubleSided": false,
-      "extensions": {
-        "KHR_materials_unlit": {}
-      },
-      "name": "Back",
-      "pbrMetallicRoughness": {
-        "baseColorFactor": [
-          1,
-          1,
-          1,
-          1
-        ],
-        "baseColorTexture": {
-          "index": 2,
-          "texCoord": 0
-        },
-        "metallicFactor": 0,
-        "roughnessFactor": 1
-      }
-    },
-    {
-      "doubleSided": false,
+      "doubleSided": true,
       "emissiveFactor": [
         1,
         1,
         1
       ],
       "emissiveTexture": {
-        "index": 1,
+        "index": 0,
         "texCoord": 0
       },
-      "extensions": {
-        "KHR_materials_unlit": {}
-      },
-      "name": "Front",
+      "name": "Mat.1",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
           1
         ],
-        "baseColorTexture": {
-          "index": 0,
-          "texCoord": 0
-        },
         "metallicFactor": 0,
-        "roughnessFactor": 1
+        "roughnessFactor": 0.59999999999999998
       }
     }
   ],
   "meshes": [
     {
+      "name": "Cube_Mat.1_0",
       "primitives": [
         {
           "attributes": {
             "NORMAL": 1,
             "POSITION": 0,
-            "TANGENT": 2,
-            "TEXCOORD_0": 3
+            "TEXCOORD_0": 2
           },
-          "indices": 4,
+          "indices": 3,
           "material": 0,
-          "mode": 4
-        }
-      ]
-    },
-    {
-      "primitives": [
-        {
-          "attributes": {
-            "NORMAL": 6,
-            "POSITION": 5,
-            "TANGENT": 7,
-            "TEXCOORD_0": 8
-          },
-          "indices": 9,
-          "material": 1,
           "mode": 4
         }
       ]
@@ -328,18 +169,43 @@
     },
     {
       "children": [
-        3,
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "c3494125f6644933abacdb8c40950573.fbx"
+    },
+    {
+      "children": [
         4
       ],
-      "name": "Holo_Final.obj.cleaner.materialmerger.gles"
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5
+      ],
+      "name": "Cube"
     },
     {
       "mesh": 0,
-      "name": ""
-    },
-    {
-      "mesh": 1,
-      "name": ""
+      "name": "Cube_Mat.1_0"
     }
   ],
   "samplers": [
@@ -363,14 +229,6 @@
     {
       "sampler": 0,
       "source": 0
-    },
-    {
-      "sampler": 0,
-      "source": 1
-    },
-    {
-      "sampler": 0,
-      "source": 2
     }
   ]
 }

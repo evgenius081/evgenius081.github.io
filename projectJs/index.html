@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pizza Constructor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <div id="order">
+            <h2>Область просмотра заказов</h2>
+            <ul id="ingridients">
+                
+            </ul>
+            <p id="totalPrice">Цена: 0$</p>
+        </div>
+        <div id="readyStage">
+            <div id="stages">
+                <div id="stage1"></div>
+                <div id="stage2"></div>
+                <div id="stage3"></div>
+                <div id="stage4"></div>
+            </div>
+            <div>
+                <button id="complete" disabled>Заказать</button>
+            </div>
+        </div>
+        <div id="selection">
+            <div id="selection-wrapper">
+                <div class="ingrid" id="basement">
+                    <h2>Основа</h2>
+                    <ul>
+                        <li>Тонкая</li>
+                        <li>Средняя</li>
+                        <li>Толстая</li>
+                        <li>На кефире</li>
+                    </ul>
+                </div>
+                <div class="ingrid" id="meat">
+                    <h2>Мясо</h2>
+                    <ul>
+                        <li>Салями</li>
+                        <li>Курица</li>
+                        <li>Пепперони</li>
+                        <li>Ветчина</li>
+                    </ul>
+                </div>
+                <div class="ingrid" id="cheese">
+                    <h2>Сыры</h2>
+                    <ul>
+                        <li>Моцарелла</li>
+                        <li>Пармезан</li>
+                        <li>Чеддер</li>
+                        <li>Рокфор</li>
+                    </ul>
+                </div>
+                <div class="ingrid" id="souce">
+                    <h2>Соусы</h2>
+                    <ul>
+                        <li>Томатный</li>
+                        <li>Песто</li>
+                        <li>Майонез</li>
+                        <li>Бешамель</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
